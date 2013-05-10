@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  practice_area: MyString
+  employer: MyString
+  link: MyString
+  position: 1
+  archived: false
+
+two:
+  title: MyString
+  practice_area: MyString
+  employer: MyString
+  link: MyString
+  position: 1
+  archived: false
