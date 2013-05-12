@@ -23,5 +23,5 @@ test:
     encoding: utf8
     reconnect: false
     database: ebulletin
-    username: ebulletin
+    username: deployer
     password: makeastatement
