@@ -1,3 +1,5 @@
+$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) 
+
 set :application, "Ebulletin"
 set :repository,  "https://github.com/jkerr838/ebulletin"
 
