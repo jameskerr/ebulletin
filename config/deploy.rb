@@ -13,7 +13,7 @@ role :db,  "74.80.225.26", :primary => true # This is where Rails migrations wil
 set :user, "deployer"
 set :deploy_to, "/var/www/#{application}"
 set :deploy_via, :remote_cache
-set :use_sudo, false
+# set :use_sudo, false
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
