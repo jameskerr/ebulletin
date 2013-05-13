@@ -1,7 +1,13 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-set :rvm_ruby_string, 'ruby-2.0.0-p0'
+set :default_environment, {
+  'PATH' => "/usr/local/rvm/gems/ruby-2.0.0-p0/bin:/usr/local/rvm/gems/ruby-2.0.0-p0@global/bin:/usr/local/rvm/rubies/ruby-2.0.0-p0/bin:/usr/local/rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$PATH",
+  'RUBY_VERSION' => '2.0.0p0',
+  'GEM_HOME'     => '/usr/local/rvm/gems/ruby-2.0.0-p0',
+  'GEM_PATH'     => '/usr/local/rvm/gems/ruby-2.0.0-p0:/usr/local/rvm/gems/ruby-2.0.0-p0@global',
+  'BUNDLE_PATH'  => '/usr/local/rvm/gems/ruby-2.0.0-p0/bin/'  # If you are using bundler.
+}
 
 set :application, "Ebulletin"
 set :repository,  "https://github.com/jkerr838/ebulletin"
