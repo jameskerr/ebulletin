@@ -29,6 +29,7 @@ gem 'hpricot'
 group :development do
 	gem 'sqlite3'
 	gem 'capistrano'
+	gem 'rvm-capistrano'
 	gem 'better_errors'
 	gem 'binding_of_caller'
 end
