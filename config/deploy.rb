@@ -1,5 +1,7 @@
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-$:.unshift('/usr/local/rvm/rubies/ruby-2.0.0-p0/bin/')
+
+set :bundle_cmd, "/usr/local/rvm/gems/ruby-2.0.0-p0@global/bin/bundle"
+set :bundle_dir, "/usr/local/rvm/gems/ruby-2.0.0-p0"
 
 require "bundler/capistrano"
 
