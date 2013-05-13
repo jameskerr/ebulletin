@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //=	require jquery-ui
 //= require ckeditor/init
+//= require jquery.tablednd
 //= require_tree .
