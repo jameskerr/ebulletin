@@ -82,7 +82,7 @@ class StoriesController < ApplicationController
   end
 	
 	def sort		
-			positions = params["stories-table"]
+			positions = params["story"]
 			Story.order('position').all.each_with_index do |story, index|
 				story.position = positions[index].to_i
 				story.save

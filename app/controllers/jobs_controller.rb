@@ -84,7 +84,7 @@ class JobsController < ApplicationController
 	def sort		
 			logger.debug current_pos = Job.order('position').all
 			logger.debug current_pos.inspect
-			logger.debug new_pos = params["job"]
+			logger.debug new_pos = params["job"].to_a
 			
 			current_pos.each_with_index do |job, index|
 				unless job.position == new_pos[index]
