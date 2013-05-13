@@ -1,6 +1,9 @@
-#$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 
 require "bundler/capistrano"
+require "rvm/capistrano"
+
+set :rvm_ruby_string, 'ruby-2.0.0-p0'
 
 set :application, "Ebulletin"
 set :repository,  "https://github.com/jkerr838/ebulletin"
