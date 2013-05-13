@@ -3,17 +3,17 @@ $(document).ready(function(){
 	 
 
 	
-	$("#stories-table").tableDnD({
-			onDrop: function(table, row) {
-				$.ajax({
-					type: 'post',
-					data: $.tableDnD.serialize(),
-					url: '/stories/sort'
-				});// end Ajax
-			},
-			onDragClass: "dragging",
-			scrollAmount: "30"
-	}); // end tableDnD Options
+	// $("#stories-table").tableDnD({
+	// 			onDrop: function(table, row) {
+	// 				$.ajax({
+	// 					type: 'post',
+	// 					data: $.tableDnD.serialize(),
+	// 					url: '/stories/sort'
+	// 				});// end Ajax
+	// 			},
+	// 			onDragClass: "dragging",
+	// 			scrollAmount: "30"
+	// 	}); // end tableDnD Options
 
 	$("#jobs-list").sortable({
 		update: function(event, ui) {
