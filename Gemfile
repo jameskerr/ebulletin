@@ -6,6 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'sqlite3'
 gem 'acts_as_list'
 
 # Gems used only for assets and not required
@@ -27,7 +28,6 @@ gem 'premailer-rails'
 gem 'hpricot'
 
 group :development do
-	gem 'sqlite3'
 	gem 'capistrano'
 	gem 'rvm-capistrano'
 	gem 'better_errors'
