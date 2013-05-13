@@ -82,19 +82,13 @@ class JobsController < ApplicationController
   end
 	
 	def sort		
-			logger.debug current_pos = Job.order('position').all
-			logger.debug current_pos.inspect
-			logger.debug new_pos = params["job"].to_a
-			
-			current_pos.each_with_index do |job, index|
-				unless job.position == new_pos[index]
-					job.position = new_pos[index]
-				end
-				job.save
-			end
-			logger.debug "NEW new_pos"
-			Job.order('position').all.each do |job|			
-				logger.debug job.title + " " + job.position.to_s
+			job_ids = params["jobs"]
+			counter = 1
+			job_ids.each do |id|
+				current_job = Job.find(id)
+				current_job.position = counter
+				current_job.save
+				counter +=1
 			end
 			render :nothing => true
 	end

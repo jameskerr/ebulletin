@@ -39,6 +39,12 @@ table.content{
 	z-index: 10;
 	position: absolute;
 }
+.sortable-placeholder {
+	height: 150px;
+}
+.content-title h2 {
+	cursor: move;
+}
 .edit-story {
 	right: 16px;
 	bottom: 6px;

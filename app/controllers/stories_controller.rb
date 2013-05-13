@@ -82,10 +82,13 @@ class StoriesController < ApplicationController
   end
 	
 	def sort		
-			positions = params["story"]
-			Story.order('position').all.each_with_index do |story, index|
-				story.position = positions[index].to_i
-				story.save
+			story_ids = params["stories"]
+			counter = 1
+			story_ids.each do |id|
+				current_story = Story.find(id)
+				current_story.position = counter
+				current_story.save
+				counter += 1
 			end
 			render :nothing => true
 	end

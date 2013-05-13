@@ -19,7 +19,7 @@
 							<!-- TABLE FOR NEWS STORIES -->
 							<table id="stories-table" cellpadding="0" cellspacing="0"> <!-- STORIES TABLE FOR DND -->
 							 <% @stories.each do |story| %>
-							 <tr id="story_<%= story.position %>">
+							 <tr id="<%= story.id %>">
 								<td>
 									<table class="content" cellspacing="0" cellpadding="0">
 										<tr>
@@ -67,7 +67,7 @@
 										<br/>
 										<ul id="jobs-list"> <!-- I NEED THIS FOR THE SORTABLE FEATURE -->
 											<% @jobs.each do |job| %>
-											<li id="job_<%= job.position %>">
+											<li id="<%= job.id %>">
 												<a href="<%= job.link %>">
 												<table align="left" class="posting" cellspacing="0" cellpadding="0">
 													<tr>

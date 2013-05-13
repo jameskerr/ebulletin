@@ -3,22 +3,28 @@ $(document).ready(function(){
 	 
 
 	
-	$("#stories-table tbody").sortable({
+	$("#stories-table tbody:first").sortable({
 				update: function(event, ui) {
+					var ids = $(this).sortable('toArray');
+					var load = {stories: ids};
 					$.ajax({
 						type: 'post',
-						data: $(this).sortable('serialize'),
+						data: load,
 						url: '/stories/sort'
 					});// end Ajax
-				},
-				cancel: ".content" // end update
+				}, // end update
+				handle: ".content-title",
+				placeholder: "sortable-placeholder",
+				cursor: "move"
 		}).disableSelection();; // end Story Sortable Options
 
 	$("#jobs-list").sortable({
 		update: function(event, ui) {
+			var ids = $(this).sortable('toArray');
+			var load = {jobs: ids};
 			$.ajax({
 				type: 'post',
-				data: $(this).sortable('serialize'),
+				data: load,
 				url: '/jobs/sort'
 			}); // end ajax
 		}// end update
