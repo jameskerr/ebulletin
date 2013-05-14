@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Ebulletin</title>
-	<style>
-  <%= raw(Ebulletin::Application.assets.find_asset('preview.css').body) %>
-	</style>
-	<%= csrf_meta_tags %>
-	<%= javascript_include_tag "application" %>
-</head>
-<body>
-
-<%= yield %>
-<script>
-	$(".action").remove();
-</script>
-</body>
+	<head>
+		<title>Ebulletin</title>
+		<style>
+			<%= raw(Ebulletin::Application.assets.find_asset('preview.css').body) %>
+		</style>
+	</head>
+	<body>
+		<%= yield %>
+	</body>
 </html>

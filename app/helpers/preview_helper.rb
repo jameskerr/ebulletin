@@ -2,7 +2,9 @@ module PreviewHelper
 	def inline_css
 		@stories = Story.order(:position).all
 		@jobs 	 = Job.order(:position).all		
-		@html = render_to_string(:action => 'index', :layout => 'generate', :locals => {:stories => @stories, :jobs => @jobs})
+		@html = render_to_string(:action => 'index', :layout => 'generate', :locals => {:stories => @stories, :jobs => @jobs, :issue => @issue})
+		all_action_divs = /<div class="action.*<\/div>/
+		@html.gsub!(all_action_divs, '')
 		premailer = Premailer.new(@html, :with_html_string => true, base_url: 'http://chapmancso.com')
 		@html = premailer.to_inline_css
 	end

@@ -15,12 +15,12 @@ $(document).ready(function() {
 	
 	CKEDITOR.replace( 'story_body',  {
 		toolbar: [
-			[ 'Bold', 'Italic', 'RemoveFormat'], ['Link', 'Unlink'] , 
-			 // NEW LINE
-			[ 'list', 'indent', 'blocks', 'align' ], [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ], [ 'Source'] , ['Maximize'],
+			[ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ], ['Link', 'Unlink'], [ 'Source'],
+			'/',
+			[ 'Bold', 'Italic', 'RemoveFormat'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight'], [ 'NumberedList','BulletedList'], ['Outdent', 'Indent'], ['Maximize']
 			], // end toolbar
 			width: '495px',
-			height: '380px',
-			stylesSet: 'my_styles'
+			height: '380px'
 	}); // end cke replace
+	
 }); // end ready
