@@ -1,4 +1,6 @@
 Ebulletin::Application.routes.draw do
+  devise_for :users
+
   match 'preview' => 'preview#index'
 
   get "preview/download"

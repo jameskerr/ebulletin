@@ -1,9 +1,20 @@
 body {
-  background-color: #fff;
+  background: #dbdbdb url(image_path("background-pattern.png"));
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: helvetica, arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+
+h2 {
+	font-size: 4em;
+	font-family: Georgia, serif;
+	font-weight: 500;
+	color: #3A3C4E;
+	text-shadow: 0 1px #fff;
+	text-align: center;
+	font-variant: small-caps;
+	letter-spacing: 8px;
 }
 
 p, ol, ul, td {

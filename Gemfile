@@ -24,7 +24,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'devise'
 gem 'ckeditor'
 gem 'premailer-rails'
 gem 'hpricot'

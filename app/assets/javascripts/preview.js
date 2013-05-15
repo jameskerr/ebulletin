@@ -1,8 +1,11 @@
-$(document).ready(function(){
-	 $("div.action").hide();
-	 
-
+//$(document).ready(function(){
+	// EVERYTHING THAT NEEDS TO BE HIDDEN
+	$("div.action").hide();
 	
+	// ALL THE EFFECTS FOR THE ALERTS AND NOTICES
+	
+	 
+	 // SORTABLE OPTIONS
 	$("#stories-table tbody:first").sortable({
 				update: function(event, ui) {
 					var ids = $(this).sortable('toArray');
@@ -17,7 +20,7 @@ $(document).ready(function(){
 				placeholder: "sortable-placeholder",
 				cursor: "move"
 		}).disableSelection();; // end Story Sortable Options
-
+		
 	$("#jobs-list").sortable({
 		update: function(event, ui) {
 			var ids = $(this).sortable('toArray');
@@ -41,6 +44,4 @@ $(document).ready(function(){
 	).mouseout(
 		function() { $(".action",this).hide(); }
 	); // end mouseovers
-	
-	
-	}); // end ready
+//}); // end ready
