@@ -1,21 +1,18 @@
 Ebulletin::Application.routes.draw do
+  
+
   devise_for :users
-
-  match 'preview' => 'preview#index'
-
+	
+	get "user/index"
+	match "user/approve" => 'user#approve'
   get "preview/download"
-	
 	get "preview/generate"
-
   get "preview/raw"
-	
+	match 'preview' => 'preview#index'
 	match 'stories/sort' => 'stories#sort'
-	
 	match 'jobs/sort' => 'jobs#sort'
 	
   resources :jobs
-
-
   resources :stories
 
 

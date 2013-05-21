@@ -1,0 +1,10 @@
+<h1>Users</h1>
+
+<%= link_to "Users awaiting approval", :action => "index", :approved => "false" %>
+
+<% @users.each do |user| %>
+	<p><%= user.email %></p>
+	<p><%= user.approved %></p>
+	<%= link_to "Approve", {:action => "approve", :id => user.id} %>
+	<br>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515162834) do
+ActiveRecord::Schema.define(:version => 20130517233427) do
 
   create_table "jobs", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(:version => 20130515162834) do
     t.boolean  "archived"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "shirts", :force => true do |t|
+    t.string   "name"
+    t.boolean  "cool"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "stories", :force => true do |t|
@@ -49,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20130515162834) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.boolean  "approved"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

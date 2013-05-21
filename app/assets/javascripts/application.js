@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //=	require jquery-ui
 //= require ckeditor/init
 //= require_tree .
@@ -20,3 +21,5 @@ $('.notice').hide();
 $('.alert').hide();
 $('.notice').delay(500).show("slide", {direction: 'right'}, 200).delay(3000).fadeOut(500);
 $('.alert').delay(500).show("slide", {direction: 'right'}, 200);
+
+$(function(){ $(document).foundation(); });

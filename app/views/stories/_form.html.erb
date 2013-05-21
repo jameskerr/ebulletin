@@ -10,32 +10,53 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
+	<div class="row">
+    <div class="large-4 columns">
+		<%= f.label :title %>
     <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br />
+    
+		<%= f.label :body %>
     <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :image_name %><br />
+    
+		<%= f.label :image_name %>
     <%= f.text_field :image_name %>
-  </div>
-  <div class="field">
-    <%= f.label :archived %><br />
-    <%= f.check_box :archived %>
-  </div>
-  <div class="field">
-    <%= f.label :call_to_action %><br />
+
+    <%= f.label :archived %>
+    <%= f.check_box :archived%>
+	
+    <%= f.label :call_to_action %>
     <%= f.text_field :call_to_action %>
-  </div>
-  <div class="field">
-    <%= f.label :link %><br />
+		
+    <%= f.label :link %>
     <%= f.text_field :link %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <%= f.submit :class => "small button success radius" %>
+		</div>
+		<div class="large-8 columns story_preview">
+			<table class="content" cellspacing="0" cellpadding="0" style="background-color: #fff; width: 600px;" bgcolor="#fff">
+				<tr>
+					<td class="content-title" style="vertical-align: top; margin: 0; padding: 0;" valign="top">
+						
+						
+						<h2 id="preview_story_title" style="font-family: Georgia, serif; font-weight: 500; color: #fff; text-shadow: 0 1px black; font-size: 28px; line-height: 40px; font-variant: small-caps; background-color: #98012e; margin: 0; border: 10px solid #fff;">&nbsp;</h2>
+					</td>
+				</tr>
+				<tr>
+					<td class="content-body" style="vertical-align: top; margin: 0; padding: 0; border: 10px solid #fff;" valign="top">
+						<!-- TABLE FOR THE MAIN IMAGE TO FLOAT RIGHT -->
+						<table class="main-image" align="right" cellpadding="0" cellspacing="0">
+							<tbody><tr>
+								<td>
+									<img class="pic" width="270" src="https://law-chapman-csm.symplicity.com/tinyfiles/classifieds/tipofweek.png"><img class="shadow" src="/assets/content-img-shadow-7c071f9af7c427600201ba3868809f8f.png">
+								</td>
+							</tr>
+						</tbody></table>
+						<!-- CONTENT TEXT GOES HERE -->
+						<p id="preview_story_body"></p><br />	
+						<a id="preview_story_call_to_action" href="#"></a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
 <% end %>
