@@ -1,9 +1,9 @@
-<table id="background" cellpadding="0" cellspacing="0">
+<table id="background" cellpadding="10px" cellspacing="0">
 		<tr>
-			<td>
+			<td align="center">
 				<table id="wrapper" cellpadding="0" cellspacing="0">
 					<tr> <!-- CSO LOGO -->
-						<td id="logo"><br/><img src="<%= image_path("cso-logo.png") %>" /><br/>
+						<td align="center" id="logo"><br/><img src="<%= image_path("cso-logo.png") %>" /><br/>
 						</td>
 					<tr/> <!-- END CSO LOGO -->
 					<tr> <!-- HEADER -->
@@ -42,7 +42,8 @@
 												</table>
 												<% end %>
 												<!-- CONTENT TEXT GOES HERE -->
-												<p><%= story.body.html_safe %></p>						
+												<%= story.body.html_safe %>
+												<br />
 												<p><a href="<%= story.link %>"><%= story.call_to_action %></a></p>
 											</td>
 										</tr>
@@ -74,7 +75,7 @@
 														<td class="job-info">
 															<div class="action edit-job"><%= link_to "edit", edit_job_path(job), :class => 'button-link' %></div>
 															<div class="action destroy-job"><%= link_to 'X', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-link' %></div>
-															<p class="job-title"><%= job.title %></a></p>
+															<p class="job-title"><%= job.title %></p>
 															<p class="employer"><%= job.employer %></p>
 															<p class="practice-area"><%= job.practice_area %></p>
 														</td>
