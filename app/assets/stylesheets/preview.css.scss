@@ -1,5 +1,6 @@
-body {
+body#preview {
 	margin: 0;
+	background: #dbdbdb url(image_path("background-pattern.png"));
 }
 table#background {
 	width: 100%;
@@ -15,6 +16,7 @@ table#wrapper td {
 }
 td#logo img {
 	display: block;
+	margin-bottom: 10px;
 }
 td#header {
 	background: #3a3c4e;
@@ -56,17 +58,23 @@ img.shadow {
 }
 table.content {
 	background: #fff;
-	width: 600px;
+	
+}
+td.content-title {
+	border: 10px solid #fff;
+	width: 580px;
+	margin:0;
+	padding:0;
 }
 td.content-title h2 {
 	background: #98012e;
 	font-size: 28px;
 	line-height: 40px;
 	font-variant: small-caps;
-	border: 10px solid #fff;
 }
 td.content-body {
 	border: 10px solid #fff;
+	width: 580px;
 }
 p, a, li, ul, ol {
 	font-family: Helvetica, Arial, sans-serif;
@@ -101,30 +109,35 @@ ul#jobs-list li {
 	margin: 0;
 	padding: 0;
 }
-table#jobs {
-	width:100%;
+table#jobs td{
 }
 table#jobs h2 {
 	background: #467860; 
 }
 table.posting {
-	width: 285px;
 	margin-left: 10px;
 	vertical-align: top;
+	width: 285px;
+	display:block;
 }
 td.job-info {
 		border: 5px solid #fff;
 		background: #fff;
+		width: 275px;
 }
 td.job-shadow img {
 	display: block;
+	width: 285px;
 }	
-p.job-title {
+p.job-title a{
 	font-weight: bold;
 	text-decoration: underline;
 }
 p.practice-area {
 	font-style: italic;
+}
+a.wrap_link {
+	line-height: 0px;
 }
 td#footer {
 	background: #3a3c4e url(image_path("footer-shadow.png")) repeat-x left top;
