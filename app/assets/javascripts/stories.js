@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	
+	// Initialize the CKEditor for the rich text body.
 	CKEDITOR.replace( 'story_body',  {
 		toolbar: [
 			[ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ], ['Link', 'Unlink'], [ 'Source'],
@@ -10,56 +11,37 @@ $(document).ready(function() {
 			height: 'auto'
 	}); // end cke replace
 	
-	
-	// INITIALIZE THE PAGE
-	initialize();
-	
-	
-	
-	// THIS IS THE FUNCTION TO UPDATE THE TITLE
-	$("#story_title").keyup(function(){
-		$("#preview_story_title").html("&nbsp;" + $(this).val());
-	}); // end title preview
-	
-	
-	// THESE ARE THE FUNCTIONS TO UPDATE THE BODY
-	CKEDITOR.instances["story_body"].on("instanceReady", function() {
-		update_body();
-		//set keyup event
-		this.document.on("keyup", update_body);
-		 // and paste event
-		this.document.on("paste", update_body);
-		});
-		function update_body() {
-			CKEDITOR.tools.setTimeout( function() { 
-					var body = CKEDITOR.instances["story_body"].getData();
-					$("#preview_story_body").html(body); 
-			}, 0); // end setTimeout	
-		} // end update_body
-		
-		
-		// THESE ARE THE FUNCTIONS TO UPDATE THE CALL TO ACTION
-		$("#story_call_to_action").keyup(function(){
-			$("#preview_story_call_to_action").html($(this).val());
-		});
-		
-		// THESE ARE THE FUNCTIONS TO UPDATE THE LINK
-		$("#story_link").keyup(function(){
-			$("#preview_story_call_to_action").attr('href', $(this).val());
-		});
-		
-		
-		// THESE ARE THE FUNCTIONS TO UPDATE THE IMAGE
-	
-	
-	
-	function initialize() {
+	// Function called to update the preview modal reveal.
+	function updateStoryPreview() {
+		// Update the title
 		$("#preview_story_title").html("&nbsp;" + $("#story_title").val());
-		update_body();
+		// Update the body.
+		updateBody();
+		// Update the call to action text.
 		$("#preview_story_call_to_action").html($("#story_call_to_action").val());
+		// Update the link under the call to action text.
 		$("#preview_story_call_to_action").attr('href', $("#story_link").val());
+		// Update the image.
+		image_name = $('#story_image_name').val();
+		if (image_name == "")
+			$('.main-image').hide();
+		else {
+			$('.main-image').show();
+			$('#preview_image').attr('src', 'https://law-chapman-csm.symplicity.com/tinyfiles/classifieds/' + image_name).load();
+		}
 	}
 	
+	// Function to update the body text.
+	function updateBody() {
+		CKEDITOR.tools.setTimeout( function() { 
+				var body = CKEDITOR.instances["story_body"].getData();
+				$("#preview_story_body").html(body); 
+		}, 0); // end setTimeout	
+	} // end update_body
 	
-	
+	// Updates the preview modal with the current values.
+	$('[data-reveal-id="preview_story_modal"]').click( function() {
+		$('#preview_story_modal').css('width','660px');
+		updateStoryPreview();
+	});
 }); // end ready

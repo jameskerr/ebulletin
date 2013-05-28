@@ -1,37 +1,64 @@
-<%= form_for(@job) do |f| %>
-  <% if @job.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
-
-      <ul>
-      <% @job.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :employer %><br />
-    <%= f.text_field :employer %>
-  </div>
-	<div class="field">
-    <%= f.label :practice_area %><br />
-    <%= f.text_field :practice_area %>
-  </div>
-  <div class="field">
-    <%= f.label :link %><br />
-    <%= f.text_field :link %>
-  </div>
-  <div class="field">
-    <%= f.label :archived %><br />
-    <%= f.check_box :archived %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class="row">
+	<div class="large-6 columns large-centered">
+		<%= form_for(@job) do |f| %>
+		<% if @job.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+			<ul>
+				<% @job.errors.full_messages.each do |msg| %>
+				<li>
+					<%= msg %>
+				</li><% end %>
+			</ul>
+		</div>
+		<% end %>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+		
+		<%= f.label :employer %>
+		<%= f.text_field :employer %>
+		
+		<%= f.label :practice_area %>
+		<%= f.text_field :practice_area %>
+		
+		<%= f.label :link %>
+		<%= f.text_field :link %>
+		
+		<%= f.submit :class => "small button success radius" %>
+		<%= link_to "Preview", "#", {:class => "small button info radius", 'data-reveal-id' => "preview_job_modal"} %>
+		<%= link_to 'Back', preview_url %>
+		<% end %>
+	</div>
+</div>
+<div id="preview_job_modal" class="reveal-modal small">
+	<a class="close-reveal-modal">&#215;</a>
+	<table class="posting" align="center" cellspacing="0" cellpadding="0"
+	style="margin-left: 10px; vertical-align: top; width: 285px; display: block;">
+		<tbody>
+			<tr>
+				<td class="job-info"
+				style="vertical-align: top; width: 275px; background-color: #fff; margin: 0; padding: 0; border: 5px solid #fff;"
+				bgcolor="#fff" valign="top">
+					<p class="job-title"
+					style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 22px; letter-spacing: .2px; color: #3a3c4e; margin: 0;">
+						<a href="https://law-chapman-csm.symplicity.com/students/index.php?mode=form&amp;id=d85566a0f4a1aeaa34f245a7fb1aa680&amp;s=jobs&amp;ss=jobs"
+						style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 22px; letter-spacing: .2px; color: #3a3c4e; font-weight: bold; text-decoration: underline; margin: 0;">
+						</a>
+					</p>
+					<p class="employer"
+					style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 22px; letter-spacing: .2px; color: #3a3c4e; font-weight: 400; margin: 0;">
+					</p>
+					<p class="practice-area"
+					style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 22px; letter-spacing: .2px; color: #3a3c4e; font-weight: 400; font-style: italic; margin: 0;">
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="job-shadow" style="vertical-align: top; margin: 0; padding: 0;" valign="top">
+					<img src="http://chapmancso.com/assets/job-shadow-a773f65fa262fdf0c7b3813078fc6c66.png"
+					style="display: block; width: 285px;" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

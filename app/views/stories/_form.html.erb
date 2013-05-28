@@ -1,28 +1,26 @@
-<%= form_for(@story) do |f| %>
-  <% if @story.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h2>
+<div class="row">
+	<div class="large-8 columns large-centered">
+	<%= form_for(@story) do |f| %>
+		<% if @story.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h2>
 
-      <ul>
-      <% @story.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-	<div class="row">
-    <div class="large-4 columns">
+				<ul>
+				<% @story.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+				</ul>
+			</div>
+		<% end %>
+
 		<%= f.label :title %>
     <%= f.text_field :title %>
     
 		<%= f.label :body %>
     <%= f.text_area :body %>
-    
+    <br />
 		<%= f.label :image_name %>
     <%= f.text_field :image_name %>
-
-    <%= f.label :archived %>
-    <%= f.check_box :archived%>
 	
     <%= f.label :call_to_action %>
     <%= f.text_field :call_to_action %>
@@ -31,29 +29,33 @@
     <%= f.text_field :link %>
 
     <%= f.submit :class => "small button success radius" %>
+		<%= link_to "Preview", "#", {:class => "small button info radius", 'data-reveal-id' => "preview_story_modal"} %>
+		<%= link_to 'Back', preview_url %>
 		</div>
-		<div class="large-8 columns story_preview">
-			<table class="content" cellspacing="0" cellpadding="0" style="background-color: #fff; width: 600px;" bgcolor="#fff">
+		<!-- Warning.  There be dragons down in this code.  There is lots of inline css and other horrible things. -->
+		<div id="preview_story_modal" class="reveal-modal">
+			<a class="close-reveal-modal">&#215;</a>
+			<table class="content" align="center" cellspacing="0" cellpadding="0" style="background-color: #fff; width: 600px;" bgcolor="#fff">
 				<tr>
-					<td class="content-title" style="vertical-align: top; margin: 0; padding: 0;" valign="top">
-						
-						
-						<h2 id="preview_story_title" style="font-family: Georgia, serif; font-weight: 500; color: #fff; text-shadow: 0 1px black; font-size: 28px; line-height: 40px; font-variant: small-caps; background-color: #98012e; margin: 0; border: 10px solid #fff;">&nbsp;</h2>
+					<td class="content-title" style="cursor: auto; vertical-align: top; margin: 0; padding: 0; border: none;" valign="top">
+						<h2 id="preview_story_title" style="font-family: Georgia, serif; font-weight: 500; color: #fff; text-shadow: 0 1px black; font-size: 28px; line-height: 40px; font-variant: small-caps; background-color: #98012e; margin: 0; border: 10px solid #fff; cursor: auto;">&nbsp;</h2>
 					</td>
 				</tr>
 				<tr>
 					<td class="content-body" style="vertical-align: top; margin: 0; padding: 0; border: 10px solid #fff;" valign="top">
 						<!-- TABLE FOR THE MAIN IMAGE TO FLOAT RIGHT -->
 						<table class="main-image" align="right" cellpadding="0" cellspacing="0">
-							<tbody><tr>
-								<td>
-									<img class="pic" width="270" src="https://law-chapman-csm.symplicity.com/tinyfiles/classifieds/tipofweek.png"><img class="shadow" src="/assets/content-img-shadow-7c071f9af7c427600201ba3868809f8f.png">
-								</td>
-							</tr>
-						</tbody></table>
+							<tbody>
+								<tr>
+									<td>
+										<img class="pic" width="270" id="preview_image" src=""><img class="shadow" src="/assets/content-img-shadow-7c071f9af7c427600201ba3868809f8f.png">
+									</td>
+								</tr>
+							</tbody>
+						</table>
 						<!-- CONTENT TEXT GOES HERE -->
 						<p id="preview_story_body"></p><br />	
-						<a id="preview_story_call_to_action" href="#"></a>
+						<a style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 22px; letter-spacing: .2px; color: #98012e; font-weight: 400; text-decoration: underline; margin: 0;" id="preview_story_call_to_action" href="#"></a>
 					</td>
 				</tr>
 			</table>
