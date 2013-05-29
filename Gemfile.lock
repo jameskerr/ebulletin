@@ -97,6 +97,7 @@ GEM
     net-ssh (2.6.7)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    newrelic_rpm (3.6.2.96)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     premailer (1.7.3)
@@ -183,6 +184,7 @@ DEPENDENCIES
   hpricot
   jquery-rails
   mysql2
+  newrelic_rpm
   premailer-rails
   quiet_assets
   rails (= 3.2.13)

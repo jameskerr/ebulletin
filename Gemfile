@@ -26,6 +26,7 @@ gem 'devise'
 gem 'ckeditor'
 gem 'premailer-rails'
 gem 'hpricot'
+gem 'newrelic_rpm'
 
 group :development do
 	gem 'capistrano'
