@@ -44,7 +44,13 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to preview_url, notice: 'Job was successfully created.' }
+        format.html { 
+				if params[:add_another]
+					redirect_to :action => 'new', notice: 'Saved'
+				else
+					redirect_to preview_url, notice: 'Job was successfully created.' 
+				end
+				}
         format.json { render json: @job, status: :created, location: @job }
       else
         format.html { render action: "new" }
@@ -91,5 +97,10 @@ class JobsController < ApplicationController
 				counter +=1
 			end
 			render :nothing => true
+	end
+	
+	def delete_all
+		Job.delete_all
+		redirect_to preview_url
 	end
 end

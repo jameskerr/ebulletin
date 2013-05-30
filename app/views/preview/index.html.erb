@@ -59,8 +59,8 @@
 						<td id="jobs">
 							<table id="jobs" cellpadding="0" cellspacing="0">
 								<tr>
-									<td class="content-title">
-										<h2>&nbsp;Job Postings</h2>
+									<td class="content-title jobs-title">
+										<h2>&nbsp;Job Postings<div class="action destroy-job"><%= link_to 'X', {:controller => 'jobs', :action => 'delete_all'}, {data: { confirm: 'Are you sure you want to delete them all?' }, class: 'button-link' }%></div></h2>
 									</td>
 								</tr>
 								<tr>

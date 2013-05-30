@@ -25,6 +25,7 @@
 		<%= f.text_field :link %>
 		
 		<%= f.submit :class => "small button success radius" %>
+		<%= f.submit "Save & Add Another", :class => "small button success radius", :name => "add_another" %>
 		<%= link_to "Preview", "#", {:class => "small button info radius", 'data-reveal-id' => "preview_job_modal"} %>
 		<%= link_to 'Back', preview_url %>
 		<% end %>

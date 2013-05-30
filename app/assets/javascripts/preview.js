@@ -40,6 +40,12 @@
 	).mouseout(
 		function() { $(".action",this).hide(); }
 	); // end mouseovers
+	
+	$(".content-title h2").mouseover(
+		function() { $(".action",this).show(); }
+	).mouseout(
+		function() { $(".action",this).hide(); }
+	); // end mouseovers
 //}); // end ready
 
 	$('.action a').click(function() {

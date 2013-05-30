@@ -11,6 +11,7 @@ Ebulletin::Application.routes.draw do
 	match 'preview' => 'preview#index'
 	match 'stories/sort' => 'stories#sort'
 	match 'jobs/sort' => 'jobs#sort'
+	match 'jobs/delete_all' => 'jobs#delete_all'
 	
   resources :jobs
   resources :stories
