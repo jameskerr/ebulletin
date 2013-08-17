@@ -1,0 +1,25 @@
+a:hover { text-decoration: underline ; }
+.issue p {font-size: 36px; font-family: Georgia, Times, serif; color: #ffffff; margin-top: 0px; margin-bottom: 0px; text-shadow: 1px 1px 1px #333;}
+.title h1 { color: #333 ; margin-top: 0px; margin-bottom: 0px; font-weight: normal; font-size: 48px; font-family: Georgia, Times, serif }
+.date p { font-size: 24px; font-family: Georgia,  Times, serif; color: #ffffff; margin-top: 0px; margin-bottom: 0px;}
+.content h1 { font-size: 24px; font-family: Georgia, Times, serif; color: #333333 ; margin-top: 0px; margin-bottom: 12px;}
+.content p { font-size: 16px; line-height: 22px; font-family: Georgia, Times, serif; color: #333; margin: 0px;}
+.content a { color: #bc1f31; text-decoration: none;}
+.content .news p {  font-size: 24px; font-family: Georgia, Times, serif; color: #bc1f31; margin-top: 0px; margin-bottom: 0px; font-weight: bold;}
+.toc h1 { font-size: 32px; font-family: Georgia, Times, serif; color: #4e3227 ; margin-top: 0px; margin-bottom: 0px; font-weight: normal;}
+.toc p a { margin-top: 0px; margin-bottom: 0px; font-size: 17px; color:#bc1f31; font-family: Georgia, Times, serif;}
+.toc p { margin-top: 0px; margin-bottom: 0px; font-size: 17px; color:#bc1f31; font-family: Georgia, Times, serif;}
+.right-rail p{ font-size: 16px; line-height: 18px; font-family: Georgia, Times, serif; color: #333;  margin-top: 0px; margin-bottom: 0px;}
+.right-rail h2 { font-size: 18px; font-family: Georgia, Times, serif; color: #bc1f31; margin-top: 0px; margin-bottom: 0px; font-weight: bold;}
+.address p {font-size: 14px; line-height: 24px; font-family: Georgia, Times, serif; color: #b0a08b; margin: 0px;}
+
+ul#jobs-list {
+	margin: 0; 
+	padding: 0;
+}
+ul#jobs-list li {
+	display: inline;
+	list-style-type: none; 
+	margin: 0;
+	padding: 0;
+}

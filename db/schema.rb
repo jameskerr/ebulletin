@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130517233427) do
+ActiveRecord::Schema.define(:version => 20130816231549) do
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.datetime "date"
+    t.string   "location"
+    t.string   "link"
+    t.text     "description"
+    t.integer  "position"
+    t.string   "image_name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "jobs", :force => true do |t|
     t.string   "title"
@@ -22,13 +34,6 @@ ActiveRecord::Schema.define(:version => 20130517233427) do
     t.boolean  "archived"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-  end
-
-  create_table "shirts", :force => true do |t|
-    t.string   "name"
-    t.boolean  "cool"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "stories", :force => true do |t|

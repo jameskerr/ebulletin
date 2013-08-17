@@ -5,7 +5,7 @@ module PreviewHelper
 		@stories = Story.order(:position).all
 		@jobs 	 = Job.order(:position).all		
 		# Get the index page as a string
-		@html = render_to_string(:action => 'index', :layout => 'generate', :locals => {:stories => @stories, :jobs => @jobs, :issue => @issue})
+		@html = render_to_string(:action => 'classifieds', :layout => 'generate', :locals => {:stories => @stories, :jobs => @jobs, :issue => @issue})
 		# Remove the action divs
 		all_action_divs = /<div class="action.*<\/div>/
 		# Remove the head

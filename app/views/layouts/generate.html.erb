@@ -3,10 +3,10 @@
 	<head>
 		<title>Ebulletin</title>
 		<style>
-			<%= raw(Ebulletin::Application.assets.find_asset('preview.css').body) %>
+			<%= raw(Ebulletin::Application.assets.find_asset( 'classifieds.css').body) %>
 		</style>
 	</head>
-	<body>
-		<%= yield %>
+	<body marginheight="0" topmargin="0" marginwidth="0" >
+		<%= yield  %>
 	</body>
 </html>

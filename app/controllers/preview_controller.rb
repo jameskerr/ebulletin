@@ -1,13 +1,15 @@
 class PreviewController < ApplicationController
 	include PreviewHelper
 	require 'premailer'
-	
+
 	before_filter :issue_number
 	before_filter :inline_css, :except => [:index]
-	
+
 	def index
 		@stories = Story.order(:position).all
 		@jobs 	 = Job.order(:position).all
+		@events  = Event.order(:date).all
+		render 'classifieds'
   end
 
   def generate

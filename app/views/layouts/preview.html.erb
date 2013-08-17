@@ -2,12 +2,11 @@
 <html>
 	<head>
 		<title>Ebulletin</title>
-		<%= stylesheet_link_tag    "preview", :media => "all" %>
-		<%= stylesheet_link_tag 	 "preview_interface", :media => "all" %>
+		<%= render 'shared/style' %>
 		<%= csrf_meta_tags %>
 	</head>
 	<body id="preview">
-		<%= render 'menu' %>
+		<%= render 'shared/menu' %>
 		<% if notice %>
 		<p class="notice"><%= notice %></p>
 		<% end %>

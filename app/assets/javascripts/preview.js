@@ -1,4 +1,4 @@
-//$(document).ready(function(){
+ //$(document).ready(function(){
 	// EVERYTHING THAT NEEDS TO BE HIDDEN
 	$("div.action").hide();
 	 // SORTABLE OPTIONS
