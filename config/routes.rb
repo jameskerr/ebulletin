@@ -1,6 +1,9 @@
 Ebulletin::Application.routes.draw do
   
 
+  resources :publics
+
+
   resources :events
 
 
@@ -15,6 +18,7 @@ Ebulletin::Application.routes.draw do
 	match 'stories/sort' => 'stories#sort'
 	match 'jobs/sort' => 'jobs#sort'
 	match 'jobs/delete_all' => 'jobs#delete_all'
+  match 'publics/sort' => 'publics#sort'
 	
   resources :jobs
   resources :stories

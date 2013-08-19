@@ -15,7 +15,7 @@
 				handle: ".content-title",
 				placeholder: "sortable-placeholder",
 				cursor: "move"
-		}).disableSelection();; // end Story Sortable Options
+		}).disableSelection(); // end Story Sortable Options
 		
 	$("#jobs-list").sortable({
 		update: function(event, ui) {
@@ -29,24 +29,29 @@
 		}// end update
 	}); // end Job Sortable options
 
-	 $("#stories-table tr").mouseover(
+	$("#publics-list").sortable({
+		update: function(event, ui) {
+			var ids = $(this).sortable('toArray');
+			var load = {publics: ids};
+			$.ajax({
+				type: 'post',
+				data: load,
+				url: '/publics/sort'
+			}); // end ajax
+		}// end update
+	}); // end Job Sortable options
+
+	$("#stories-table tr").mouseover(
 		function() { $(".action",this).show(); }
 	).mouseout(
 		function() { $(".action",this).hide(); }
 	); // end mouseovers
 	
-	$(".posting").mouseover(
+	$(".sort-list li").mouseover(
 		function() { $(".action",this).show(); }
 	).mouseout(
 		function() { $(".action",this).hide(); }
 	); // end mouseovers
-	
-	$(".content-title h2").mouseover(
-		function() { $(".action",this).show(); }
-	).mouseout(
-		function() { $(".action",this).hide(); }
-	); // end mouseovers
-//}); // end ready
 
 	$('.action a').click(function() {
 		scroll_value = $('body').scrollTop();

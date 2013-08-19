@@ -7,7 +7,7 @@
 					<tr>
 						<td valign="middle" align="center" height="45">
 							<p style="font-size: 14px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #b0a08b; margin: 0px;">
-								Is this email not displaying correctly? <webversion style="color: #bc1f31; text-decoration: none;">Try the web version.</webversion></p></td>
+								Is this email not displaying correctly? <a href="https://www.chapman.edu/law/_files/careers/secure/classifieds/<%= @today %>.html" style="color: #bc1f31; text-decoration: none;">Try the web version.</a></p></td>
 							</tr>
 						</table>
 						<!--header-->
@@ -30,7 +30,7 @@
 																</tr>
 																<tr>
 																	<td valign="top" align="center" class="issue">
-																		<singleline label="Title"><p>31</p></singleline>
+																		<singleline label="Title"><p><%= @issue %></p></singleline>
 																	</td>
 																</tr>
 															</table>
@@ -165,9 +165,11 @@
 																				</table><!--/break-->
 																				<h2>Current Job Postings</h2>
 																				<!-- Start Repeat -->
-																				<ul id="jobs-list">
+																				<ul id="jobs-list" class="sort-list">
 																				<% @jobs.each do |job| %>
-																				<li id="<%= job.id %>">
+																				<li id="<%= job.id %>" style="position: relative;">
+																				<div class="action edit-job"><%= link_to "edit", edit_job_path(job), :class => 'button-link' %></div>
+																				<div class="action destroy-job"><%= link_to 'X', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-link' %></div>
 																				<table width="100%" border="0" cellpadding="0" cellspacing="0">
 																					<tr>
 																						<td height="10"></td>
@@ -183,7 +185,7 @@
 																					<table width="140" border="0" cellspacing="0" cellpadding="10">
 																						<tr>
 																							<td style="background-color: #bc1f31; text-decoration: none; padding: 5px; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -khtml-border-radius: 4px;">
-																								<p style=" margin-top: 0px; margin-bottom: 0px; font-size: 16px; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;"><unsubscribe style="color:#ffffff; text-decoration: none;" href="#">Apply</unsubscribe></p></td>
+																								<p style=" margin-top: 0px; margin-bottom: 0px; font-size: 16px; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;"><a style="color:#ffffff; text-decoration: none;">Apply</a></p></td>
 																							</tr>
 																						</table>
 																					</a>
@@ -204,10 +206,16 @@
 																						</table><!--/break-->
 																						
 																						<h2 style="color: #1B75BB"><singleline label="Title" repeatertitle="true">Upcomming Events</singleline></h2>
+																						<ul class="sort-list">
 																						<% @events.each do |event| %>
-																						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+																						<li>
+																						<table width="100%" border="0" cellpadding="0" cellspacing="0" style="position: relative;">
 																							<tr>
-																								<td height="10"></td>
+																								
+																								<td height="10">
+																								<div class="action edit-event"><%= link_to "edit", edit_event_path(event), :class => 'button-link' %></div>
+																								<div class="action destroy-event"><%= link_to 'X', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-link' %></div>
+																								</td>
 																							</tr>
 																						</table>
 																						<multiline label="Description"><p><b><%= event.title %></b><br><%= event.date.strftime("%a., %b %d - %l:%M %p") %></p></multiline>
@@ -220,13 +228,13 @@
 																						<table width="140" border="0" cellspacing="0" cellpadding="10">
 																						<tr>
 																							<td style="background-color: #1B75BB; text-decoration: none; padding: 5px; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -khtml-border-radius: 4px;">
-																								<p style=" margin-top: 0px; margin-bottom: 0px; font-size: 16px; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;"><unsubscribe style="color:#ffffff; text-decoration: none;" href="#">RSVP</unsubscribe></p></td>
+																								<p style=" margin-top: 0px; margin-bottom: 0px; font-size: 16px; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;"><a style="color:#ffffff; text-decoration: none;">RSVP</a></p></td>
 																							</tr>
 																						</table>
 																						</a>
-																						
+																						</li>
 																						<% end %>
-
+																					</ul>
 
 																					</td>
 																				</tr>
@@ -239,24 +247,26 @@
 																							</tr>
 																						</table><!--/break-->
 																						
-																						<h2 style="color: #00B960"><singleline label="Title" repeatertitle="true">Public Interest News</singleline></h2>
-																					
-																						<repeater>
-																						<table width="100%" border="0" cellpadding="0" cellspacing="0">
-																							<tr>
-																								<td height="10"></td>
-																							</tr>
-																						</table>
-																						<multiline label="Description"><p><b>Get Your Apps In!</b><br>Any public interest <a href="#">news will be</a>right here. Awesome awesome awesome.  I should also add a title so that this looks like a professional type of newsletter.</p></multiline>
-																						<table width="100%" border="0" cellpadding="0" cellspacing="0">
-																							<tr>
-																								<td height="6"></td>
-																							</tr>
-																						</table>
-																					
-																						</repeater>
-
-
+																						<h2 style="color: #00B960">Public Interest News</h2>
+																						<ul id="publics-list" class="sort-list">
+																						<% @publics.each do |public| %>
+																						<li id="<%= public.id %>" style="position: relative;">
+																							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+																								<tr>
+																									<td height="10">
+																										<div class="action edit-public"><%= link_to "edit", edit_public_path(public), :class => 'button-link' %></div>
+																										<div class="action destroy-public"><%= link_to 'X', public, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-link' %></div></td>
+																								</tr>
+																							</table>
+																							<p><b><%= public.title %></b><br><%= public.body.html_safe %></p>
+																							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+																								<tr>
+																									<td height="6"></td>
+																								</tr>
+																							</table>
+																						</li>
+																						<% end %>
+																					</ul>
 																					</td>
 																				</tr>
 																			</table>
@@ -281,7 +291,7 @@
 											<tr>
 												<td valign="top">
 													<p style="font-size: 14px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #b0a08b; margin: 0px;">
-														<singleline label="Title">If you have any questions or would like like to speak with a career counselor, please <unsubscribe style="color: #bc1f31; text-decoration: none;">contact us</unsubscribe>.</p>
+														<singleline label="Title">If you have any questions or would like like to speak with a career counselor, please <a href="http://www.chapman.edu/law/careers/contact-us.aspx" style="color: #bc1f31; text-decoration: none;">contact us</a>.</p>
 													</td>
 													<td valign="top" class="address" width="245"><multiline label="Description"><p>Chapman University<br>Dale E. Fowler School of Law<br>Career Services Office</p></multiline></td>
 													</tr>

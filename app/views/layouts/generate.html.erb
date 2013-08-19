@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Ebulletin</title>
+		<title>The Classifieds</title>
 		<style>
 			<%= raw(Ebulletin::Application.assets.find_asset( 'classifieds.css').body) %>
 		</style>
 	</head>
-	<body marginheight="0" topmargin="0" marginwidth="0" >
+	<body marginheight="0" topmargin="0" marginwidth="0" style="padding:0, margin:0">
 		<%= yield  %>
 	</body>
 </html>

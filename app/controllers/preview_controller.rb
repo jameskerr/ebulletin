@@ -9,6 +9,9 @@ class PreviewController < ApplicationController
 		@stories = Story.order(:position).all
 		@jobs 	 = Job.order(:position).all
 		@events  = Event.order(:date).all
+		@publics = Public.order(:position).all
+		@today   = today
+		logger.debug @today
 		render 'classifieds'
   end
 
@@ -17,7 +20,7 @@ class PreviewController < ApplicationController
 	end
 
   def raw
-		render :layout => 'no_assets'
+		render 'shared/raw', :layout => 'no_assets'
   end
 	
 	def download

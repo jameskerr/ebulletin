@@ -1,5 +1,3 @@
-$(document).ready(function() {
-	
 	// Initialize the CKEditor for the rich text body.
 	CKEDITOR.replace( 'story_body',  {
 		toolbar: [
@@ -44,4 +42,3 @@ $(document).ready(function() {
 		$('#preview_story_modal').css('width','660px');
 		updateStoryPreview();
 	});
-}); // end ready

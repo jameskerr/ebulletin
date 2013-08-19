@@ -13,13 +13,13 @@
 			</div>
 		<% end %>
 
-		<%= f.label :title %>
+	<%= f.label :title %>
     <%= f.text_field :title %>
     
-		<%= f.label :body %>
+	<%= f.label :body %>
     <%= f.text_area :body %>
     <br />
-		<%= f.label :image_name %>
+	<%= f.label :image_name %>
     <%= f.text_field :image_name %>
 	
     <%= f.label :call_to_action %>
@@ -29,8 +29,8 @@
     <%= f.text_field :link %>
 
     <%= f.submit :class => "small button success radius" %>
-		<%= link_to "Preview", "#", {:class => "small button info radius", 'data-reveal-id' => "preview_story_modal"} %>
-		<%= link_to 'Back', preview_url %>
+	<%= link_to "Preview", "#", {:class => "small button info radius", 'data-reveal-id' => "preview_story_modal"} %>
+	<%= link_to 'Back', preview_url %>
 		</div>
 		<!-- Warning.  There be dragons down in this code.  There is lots of inline css and other horrible things. -->
 		<div id="preview_story_modal" class="reveal-modal">
