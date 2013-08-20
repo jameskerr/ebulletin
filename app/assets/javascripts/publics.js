@@ -1,5 +1,8 @@
 // Initialize the CKEditor for the rich text body.
-CKEDITOR.replace( 'public_body',  {
+
+if ($("#public_body").length)
+{
+	CKEDITOR.replace( 'public_body',  {
 	toolbar: [
 		[ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ], ['Link', 'Unlink'], [ 'Source'],
 		'/',
@@ -7,4 +10,5 @@ CKEDITOR.replace( 'public_body',  {
 		], // end toolbar
 		width: 'auto',
 		height: 'auto'
-}); // end cke replace
+	}); // end cke replace
+}

@@ -1,4 +1,5 @@
 	// Initialize the CKEditor for the rich text body.
+if ($("#story_body").length) {
 	CKEDITOR.replace( 'story_body',  {
 		toolbar: [
 			[ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ], ['Link', 'Unlink'], [ 'Source'],
@@ -42,3 +43,4 @@
 		$('#preview_story_modal').css('width','660px');
 		updateStoryPreview();
 	});
+}
