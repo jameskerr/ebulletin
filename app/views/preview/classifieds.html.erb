@@ -95,11 +95,13 @@
 																<table width="100%" border="0" cellspacing="0" cellpadding="0">
 																	<tr>
 																		<td>
+																			
 																			<img src="<%= image_path("line-break-4.jpg") %>" width="378" height="27" />
+																			
 																		</td>
 																	</tr>
 																	<tr>
-																		<td align="center" class="news">
+																		<td align="left" class="news">
 																			<div class="action edit-story"><%= link_to "edit", edit_story_path(story), :class => 'button-link' %></div>
 																			<div class="action destroy-story"><%= link_to 'X', story, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-link' %></div>
 																			<p class="content-title"><%= story.title %></p>
@@ -109,13 +111,15 @@
 																		<td valign="top" height="25"></td>
 																	</tr>
 																</table>
-															
+																<% if story.image_name != "" or nil %>
 																<img src="https://law-chapman-csm.symplicity.com/tinyfiles/classifieds/<%= story.image_name %>" style="border: solid 1px #FFF; box-shadow: 2px 2px 6px #333; -webkit-box-shadow: 2px 2px 6px #333333; -khtml-box-shadow: 2px 2px 6px #333; -moz-box-shadow: 2px 2px 6px #333;" width="370" height="auto" editable="true" label="Image" />
+
 																<table width="100%" border="0" cellpadding="0" cellspacing="0">
 																	<tr>
 																		<td height="10">&nbsp;</td>
 																	</tr>
 																</table>
+																<% end %>
 																<%= story.body.html_safe %>
 																<p><a href="<%= story.link %>"><%= story.call_to_action %></a></p>
 																
@@ -163,7 +167,9 @@
 																						<td height="40"></td>
 																					</tr>
 																				</table><!--/break-->
+																				<% unless @jobs.count == 0 %>
 																				<h2>Current Job Postings</h2>
+																				<% end %>
 																				<!-- Start Repeat -->
 																				<ul id="jobs-list" class="sort-list">
 																				<% @jobs.each do |job| %>
@@ -204,8 +210,9 @@
 																								<td height="30"></td>
 																							</tr>
 																						</table><!--/break-->
-																						
+																						<% unless @events.count == 0 %>
 																						<h2 style="color: #1B75BB"><singleline label="Title" repeatertitle="true">Upcomming Events</singleline></h2>
+																						<% end %>
 																						<ul class="sort-list">
 																						<% @events.each do |event| %>
 																						<li>
@@ -239,15 +246,16 @@
 																					</td>
 																				</tr>
 																				<tr>
-																					<td valign="top" class="right-rail">
+																					<td valign="top" class="right-rail publics">
 																						<!--break-->
 																						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 																							<tr>
 																								<td height="30"></td>
 																							</tr>
 																						</table><!--/break-->
-																						
+																						<% unless @publics.count == 0 %>
 																						<h2 style="color: #00B960">Public Interest News</h2>
+																						<% end %>
 																						<ul id="publics-list" class="sort-list">
 																						<% @publics.each do |public| %>
 																						<li id="<%= public.id %>" style="position: relative;">
@@ -258,7 +266,17 @@
 																										<div class="action destroy-public"><%= link_to 'X', public, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-link' %></div></td>
 																								</tr>
 																							</table>
-																							<p><b><%= public.title %></b><br><%= public.body.html_safe %></p>
+																							<h2><%= public.title %></h2>
+																							<%= public.body.html_safe %>
+																							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																								<tr>
+																									<td>
+																			
+																									<img src="<%= image_path("publics-break.jpg") %>" width="220" height="5" />
+																			
+																								</td>
+																							</tr>
+																						</table>
 																							<table width="100%" border="0" cellpadding="0" cellspacing="0">
 																								<tr>
 																									<td height="6"></td>
