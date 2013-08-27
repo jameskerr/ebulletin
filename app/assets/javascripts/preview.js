@@ -53,6 +53,12 @@
 		function() { $(".action",this).hide(); }
 	); // end mouseovers
 
+	$("td.right-rail h2").mouseover(
+		function() { $(".action",this).show(); }
+	).mouseout(
+		function() { $(".action",this).hide(); }
+	); // end mouseovers
+
 	$('.action a').click(function() {
 		scroll_value = $('body').scrollTop();
 		createCookie("scroll",scroll_value);
