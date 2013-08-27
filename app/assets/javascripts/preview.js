@@ -12,10 +12,10 @@
 						url: '/stories/sort'
 					});// end Ajax
 				}, // end update
-				handle: ".content-title",
+				handle: ".story-break",
 				placeholder: "sortable-placeholder",
 				cursor: "move"
-		}).disableSelection(); // end Story Sortable Options
+		}); // end Story Sortable Options
 		
 	$("#jobs-list").sortable({
 		update: function(event, ui) {

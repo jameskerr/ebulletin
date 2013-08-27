@@ -88,15 +88,15 @@
 												<tr>
 													<td valign="top" width="61%" class="content">
 														<table id="stories-table" cellpadding="0" cellspacing="0"> <!-- STORIES TABLE FOR DND -->
-															<% @stories.each do |story| %>
 															<tbody>
+															<% @stories.each do |story| %>
 																<tr id="<%= story.id %>">
 																	<td>
 																		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 																			<tr>
-																				<td>
+																				<td class="story-break">
 
-																					<img src="<%= image_path("line-break-4.jpg") %>" width="378" height="27" />
+																					<img style="cursor:move;" src="<%= image_path("line-break-4.jpg") %>" width="378" height="27" />
 
 																				</td>
 																			</tr>
@@ -125,8 +125,8 @@
 
 																	</td>
 																</tr>
-															</tbody>
 															<% end %>
+															</tbody>
 														</table>
 													</td>
 													<td valign="top" width="39%">
