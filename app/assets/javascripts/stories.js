@@ -7,7 +7,7 @@ if ($("#story_body").length) {
 			[ 'Bold', 'Italic', 'RemoveFormat'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight'], [ 'NumberedList','BulletedList'], ['Outdent', 'Indent'], ['Maximize']
 			], // end toolbar
 			width: 'auto',
-			height: 'auto'
+			height: '320px'
 	}); // end cke replace
 	
 	// Function called to update the preview modal reveal.
